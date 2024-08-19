@@ -4,7 +4,7 @@ const rulesBtn = document.querySelector(".rules-btn");
 const choicesEle = document.querySelectorAll(".paper, .scissors, .rock");
 const gameContainer = document.querySelector(".game-container");
 const stepTwoTemplate = document.getElementById("waiting");
-
+const score = document.querySelector(".score>h1");
 const choices = {
   paper: "rock",
   rock: "scissors",
@@ -44,8 +44,16 @@ function youPicked(e) {
     const emptyChoiceParent = emptyChoice.parentNode;
 
     emptyChoiceParent.replaceChild(computerChoiceEle, emptyChoice);
-    console.log(choices[choice.dataset.choice] === computerChoice);
-    console.log(choices[computerChoice] === choice.dataset.choice);
+    if (choices[choice.dataset.choice] === computerChoice) {
+      console.log("Player wins");
+      score.textContent = `${parseInt(score.textContent) + 1}`;
+    } else if (choices[computerChoice] === choice.dataset.choice) {
+      console.log("computer wins");
+      score.textContent = `${parseInt(score.textContent) - 1}`;
+    } else {
+      console.log("It's a draw");
+    }
+    localStorage.setItem("score", score.textContent);
   }, 5000);
 }
 
@@ -55,6 +63,13 @@ rulesBtn.addEventListener("click", () => {
 
 closeBtn.addEventListener("click", () => {
   rulesDialog.close();
+});
+
+window.addEventListener("load", () => {
+  if (localStorage.getItem("score") == null) {
+    localStorage.setItem("score", score.textConten ?? "12");
+  }
+  score.textContent = localStorage.getItem("score");
 });
 
 for (const choiceEle of choicesEle) {
