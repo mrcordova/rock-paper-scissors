@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 :root {
-  --Scissors-Gradient: hsl(39, 89%, 49%) to hsl(40, 84%, 53%);
-  --Paper-Gradient: hsl(230, 89%, 62%) to hsl(230, 89%, 65%);
-  --Rock-Gradient: hsl(349, 71%, 52%) to hsl(349, 70%, 56%);
+  --Scissors-Gradient: linear-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+  --Paper-Gradient: linear-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+  --Rock-Gradient: linear-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
   --Lizard-Gradient: hsl(261, 73%, 60%) to hsl(261, 72%, 63%);
   --Cyan: hsl(189, 59%, 53%) to hsl(189, 58%, 57%);
 
@@ -44,6 +44,46 @@ main {
   height: 100%;
   display: flex;
   flex-direction: column;
+}
+.game-container {
+}
+
+.choice {
+  width: max-content;
+  border-radius: 50%;
+  padding-block: 1.5rem;
+  padding-inline: 1.8rem;
+  background: var(--white);
+  box-shadow: inset 0px 4px 0px 0px hsl(235, 24%, 80%);
+
+  & img {
+    height: 3.3rem;
+  }
+}
+.paper,
+.rock,
+.scissors {
+  width: max-content;
+  background: var(--Paper-Gradient);
+  padding-block: 1rem;
+  padding-inline: 0.9rem;
+  border-radius: 50%;
+  box-shadow: inset 0px -4px 0px 0px hsl(229, 66%, 46%);
+  box-shadow: inset 0px -5px 0px 0px hsl(from black h s l / 0.3);
+}
+
+.rock {
+  background: var(--Rock-Gradient);
+  & .choice {
+    padding-block-start: 1.8rem;
+    & img {
+      height: 2.7rem;
+    }
+  }
+}
+
+.scissors {
+  background: var(--Scissors-Gradient);
 }
 
 .score-container {
