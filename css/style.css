@@ -51,11 +51,15 @@ main {
 
 .empty-choice {
   background-color: hsl(220, 47%, 18%);
+
   height: 6.3rem;
   width: 6.34rem;
   border-radius: 50%;
+  grid-row: 1;
+  grid-column: 2;
   /* aspect-ratio: 1; */
 }
+
 .game-container {
   display: grid;
   justify-items: center;
@@ -155,8 +159,13 @@ main {
   margin-block-start: -0.4rem;
   place-items: center;
   gap: 1.4rem;
+  padding-block-end: 6.5rem;
   & div {
     grid-row: 1;
+  }
+  .you-picked {
+    grid-row: 1;
+    grid-column: 1;
   }
 }
 
