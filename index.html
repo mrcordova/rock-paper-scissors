@@ -16,40 +16,39 @@
     <script defer src="js/script.js"></script>
     <title>Frontend Mentor | Rock, Paper, Scissors</title>
 
-    Score Rules You Picked The House Picked You Win You Lose Play Again
+    <!-- Score Rules You Picked The House Picked You Win You Lose Play Again -->
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style>
-      .attribution {
-        font-size: 11px;
-        text-align: center;
-      }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
-    </style>
   </head>
-  <body>
+  <body class="barlow-semi-condensed-semibold">
     <main>
-      <div>
+      <div class="score-container">
         <img src="./images/logo.svg" alt="rock, popers, Scissors" />
-        <div>
-          <div>score</div>
+        <div class="score barlow-semi-condensed-bold">
+          <div>SCORE</div>
           <h1>12</h1>
         </div>
+      </div>
+
+      <div>
         <div>
-          <div>
-            <img src="./images/icon-paper.svg" alt="open hand" />
-          </div>
-          <div>
-            <img src="./images/icon-scissors.svg" alt="two staight fingers" />
-          </div>
-          <div>
-            <img src="./images/icon-paper.svg" alt="close hand" />
-          </div>
-          <button>RULES</button>
+          <img src="./images/icon-paper.svg" alt="open hand" />
+        </div>
+        <div>
+          <img src="./images/icon-scissors.svg" alt="two staight fingers" />
+        </div>
+        <div>
+          <img src="./images/icon-paper.svg" alt="close hand" />
         </div>
       </div>
+      <button>RULES</button>
+      <dialog>
+        <h2>RULES</h2>
+        <img src="./images/image-rules.svg" alt="rules for game" />
+        <button>
+          <img src="./images/icon-close.svg" alt="X" />
+        </button>
+      </dialog>
     </main>
   </body>
 </html>
