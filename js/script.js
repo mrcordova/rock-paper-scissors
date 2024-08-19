@@ -5,6 +5,15 @@ const choicesEle = document.querySelectorAll(".paper, .scissors, .rock");
 const gameContainer = document.querySelector(".game-container");
 const stepTwoTemplate = document.getElementById("waiting");
 
+const choices = {
+  paper: "rock",
+  rock: "scissors",
+  scissors: "paper",
+};
+const choicesKey = Object.keys(choices);
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
 function youPicked(e) {
   const choice = e.currentTarget.cloneNode(true);
 
@@ -23,6 +32,21 @@ function youPicked(e) {
   );
 
   gameContainer.style.display = "none";
+
+  setTimeout(() => {
+    // console.log();
+    const computerChoice = choicesKey[getRandomInt(3)];
+    const computerChoiceEle = gameContainer
+      .querySelector(`[data-choice="${computerChoice}"`)
+      .cloneNode(true);
+    computerChoiceEle.classList.add("computer-picked");
+    const emptyChoice = document.querySelector(".empty-choice");
+    const emptyChoiceParent = emptyChoice.parentNode;
+
+    emptyChoiceParent.replaceChild(computerChoiceEle, emptyChoice);
+    console.log(choices[choice.dataset.choice] === computerChoice);
+    console.log(choices[computerChoice] === choice.dataset.choice);
+  }, 5000);
 }
 
 rulesBtn.addEventListener("click", () => {
