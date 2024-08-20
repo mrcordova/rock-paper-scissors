@@ -65,8 +65,12 @@ function youPicked(e) {
       //   console.log("It's a draw");
       resultContainer.children[0].textContent = "YOU TIED";
     }
+    choice.classList.add("play-shadows");
     resultContainer.children[1].addEventListener("click", (e) => {
       console.log("play agian");
+      document.querySelector(".step-2").remove();
+      gameContainer.style.display = "";
+      resultContainer.remove();
     });
     localStorage.setItem("score", score.textContent);
   }, 5000);

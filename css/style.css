@@ -37,7 +37,7 @@ body {
   min-height: 100svh;
   background: var(--Radial-Gradient) no-repeat;
 
-  padding-inline: 2rem 1.9rem;
+  /* padding-inline: 2rem 1.9rem; */
   padding-block: 1.8rem;
 }
 
@@ -47,6 +47,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 6.5rem;
+  padding-inline: 2rem 1.9rem;
 }
 
 .empty-choice {
@@ -161,6 +162,8 @@ main {
   place-items: center;
   gap: 1.4rem;
   /* padding-block-end: 6.5rem; */
+  /* flex: 1; */
+  grid-template-rows: max-content;
   color: var(--white);
   & div {
     grid-row: 1;
@@ -210,6 +213,9 @@ main {
   gap: 1.4rem; */
   letter-spacing: 0.09rem;
   font-size: 1rem;
+
+  /* height: max-content; */
+  /* line-height: 100%; */
 }
 
 .rules-btn {
@@ -258,4 +264,12 @@ main {
   & button {
     cursor: pointer;
   }
+}
+
+.play-shadows {
+  /* background-size: 18rem 11rem; */
+  /* background-position: center left -3rem; */
+  box-shadow: inset 0px -5px 0px 0px hsl(from black h s l / 0.3),
+    0px 0px 0px 18px hsl(220, 34%, 26%), 0px 0px 0px 50px hsl(220, 37%, 24%),
+    0px 0px 0px 80px hsl(220, 42%, 22%);
 }
