@@ -157,10 +157,11 @@ main {
 .step-2 {
   display: grid;
   justify-content: space-between;
-  margin-block-start: -0.4rem;
+  /* margin-block-start: -0.4rem; */
   place-items: center;
   gap: 1.4rem;
-  padding-block-end: 6.5rem;
+  /* padding-block-end: 6.5rem; */
+  color: var(--white);
   & div {
     grid-row: 1;
   }
@@ -171,6 +172,33 @@ main {
   .computer-picked {
     grid-row: 1;
     grid-column: 2;
+  }
+}
+.result-container {
+  display: flex;
+  flex-direction: column;
+  grid-row: 3;
+  grid-column: 1 / span 2;
+  align-items: center;
+  gap: 0.5rem;
+  /* padding-block-start: 2.1rem; */
+  margin-block-start: -3rem;
+
+  & p {
+    font-size: 3.5rem;
+    color: var(--white);
+  }
+
+  & button {
+    color: var(--Dark-Text);
+    background-color: white;
+    padding-inline: 3.8rem;
+    padding-block: 0.7rem;
+    letter-spacing: 0.15rem;
+    border-radius: 0.5rem;
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
 
@@ -193,9 +221,16 @@ main {
   padding-block: 0.4rem;
   letter-spacing: 0.15rem;
   margin-block-start: 2.4rem;
+  /* margin-block-end: -2rem; */
   &:hover {
     cursor: pointer;
   }
+}
+
+.rules-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #rules-dialog[open] {

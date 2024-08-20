@@ -19,7 +19,7 @@ function youPicked(e) {
 
   gameContainer.insertAdjacentHTML(
     "beforebegin",
-    ` <div class="step-2 barlow-semi-condensed-bold">
+    `<div class="step-2 barlow-semi-condensed-bold">
           <p class="pick-container">YOU PICKED</p>
           <div class="empty-choice"></div>
           <p class="pick-container">THE HOUSE PICKED</p>
@@ -35,6 +35,15 @@ function youPicked(e) {
 
   setTimeout(() => {
     // console.log();
+    rulesBtn.insertAdjacentHTML(
+      "beforebegin",
+      `<div class="result-container" style="display:none">
+        <p>YOU LOSE</p>
+        <button>PLAY AGAIN</button>
+      </div>`
+    );
+    const resultContainer = document.querySelector(".result-container");
+    resultContainer.style.display = "";
     const computerChoice = choicesKey[getRandomInt(3)];
     const computerChoiceEle = gameContainer
       .querySelector(`[data-choice="${computerChoice}"`)
@@ -45,14 +54,20 @@ function youPicked(e) {
 
     emptyChoiceParent.replaceChild(computerChoiceEle, emptyChoice);
     if (choices[choice.dataset.choice] === computerChoice) {
-      console.log("Player wins");
+      //   console.log("Player wins");
+      resultContainer.children[0].textContent = "YOU WIN";
       score.textContent = `${parseInt(score.textContent) + 1}`;
     } else if (choices[computerChoice] === choice.dataset.choice) {
-      console.log("computer wins");
+      //   console.log("computer wins");
+      resultContainer.children[0].textContent = "YOU LOSE";
       score.textContent = `${parseInt(score.textContent) - 1}`;
     } else {
-      console.log("It's a draw");
+      //   console.log("It's a draw");
+      resultContainer.children[0].textContent = "YOU TIED";
     }
+    resultContainer.children[1].addEventListener("click", (e) => {
+      console.log("play agian");
+    });
     localStorage.setItem("score", score.textContent);
   }, 5000);
 }
