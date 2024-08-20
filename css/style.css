@@ -276,11 +276,17 @@ main {
   border-radius: 0.6rem;
   align-self: center;
   color: var(--white);
+  /* Mobile */
+  /* padding-inline: 2.3rem; */
+  /* padding-block: 0.4rem; */
+  /* letter-spacing: 0.15rem; */
+  /* margin-block-start: 2.4rem; */
+  /* Desktop */
   padding-inline: 2.3rem;
   padding-block: 0.4rem;
   letter-spacing: 0.15rem;
-  margin-block-start: 2.4rem;
-  /* margin-block-end: -2rem; */
+  margin-block-start: -3.7rem;
+
   &:hover {
     cursor: pointer;
   }
@@ -325,4 +331,10 @@ main {
   box-shadow: inset 0px -5px 0px 0px hsl(from black h s l / 0.3),
     0px 0px 0px 18px hsl(220, 34%, 26%), 0px 0px 0px 50px hsl(220, 37%, 24%),
     0px 0px 0px 80px hsl(220, 42%, 22%);
+}
+
+@media (min-width: 30rem) {
+  .rules-container {
+    align-self: flex-end;
+  }
 }
