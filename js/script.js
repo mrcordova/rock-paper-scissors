@@ -8,9 +8,11 @@ const gameContainer = document.querySelector(".game-container");
 const stepTwoTemplate = document.getElementById("waiting");
 const score = document.querySelector(".score>h1");
 const choices = {
-  paper: "rock",
-  rock: "scissors",
-  scissors: "paper",
+  paper: ["rock", "spock"],
+  rock: ["scissors", "lizard"],
+  scissors: ["paper", "lizard"],
+  spock: ["scissors", "rock"],
+  lizard: ["spock", "paper"],
 };
 const choicesKey = Object.keys(choices);
 function getRandomInt(max) {
@@ -55,12 +57,12 @@ function youPicked(e) {
     const emptyChoiceParent = emptyChoice.parentNode;
 
     emptyChoiceParent.replaceChild(computerChoiceEle, emptyChoice);
-    if (choices[choice.dataset.choice] === computerChoice) {
+    if (choices[choice.dataset.choice].includes(computerChoice)) {
       //   console.log("Player wins");
       resultContainer.children[0].textContent = "YOU WIN";
       score.textContent = `${parseInt(score.textContent) + 1}`;
       choice.classList.add("play-shadows");
-    } else if (choices[computerChoice] === choice.dataset.choice) {
+    } else if (choices[computerChoice].includes(choice.dataset.choice)) {
       //   console.log("computer wins");
       resultContainer.children[0].textContent = "YOU LOSE";
       score.textContent = `${parseInt(score.textContent) - 1}`;
