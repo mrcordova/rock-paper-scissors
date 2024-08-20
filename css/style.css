@@ -3,8 +3,8 @@
   --Scissors-Gradient: linear-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
   --Paper-Gradient: linear-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
   --Rock-Gradient: linear-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
-  --Lizard-Gradient: hsl(261, 73%, 60%) to hsl(261, 72%, 63%);
-  --Cyan: hsl(189, 59%, 53%) to hsl(189, 58%, 57%);
+  --Lizard-Gradient: linear-gradient(hsl(261, 73%, 60%), hsl(261, 72%, 63%));
+  --Spock-Cyan: linear-gradient(hsl(189, 59%, 53%), hsl(189, 58%, 57%));
 
   --white: hsl(0, 0%, 98%);
 
@@ -64,11 +64,17 @@ main {
   display: grid;
   justify-items: center;
 
-  gap: clamp(1rem, 0.8944rem + 0.4507vw, 1.3rem)
-    clamp(3rem, 2.2958rem + 3.0047vw, 5rem);
-  background: url(../images/bg-triangle.svg) center
-    clamp(3.5rem, 2.6197rem + 3.7559vw, 6rem);
-  background-size: clamp(13rem, 10.8873rem + 9.0141vw, 19rem);
+  align-items: center;
+
+  /* gap: clamp(1rem, 0.8944rem + 0.4507vw, 1.3rem)
+    clamp(3rem, 2.2958rem + 3.0047vw, 5rem); */
+
+  gap: 2.5rem 2.5rem;
+  /* background: url(../images/bg-pentagon.svg) center
+    clamp(3.5rem, 2.6197rem + 3.7559vw, 6rem); */
+  background: url(../images/bg-pentagon.svg) center 2rem;
+  /* background-size: clamp(13rem, 10.8873rem + 9.0141vw, 19rem); */
+  background-size: 15rem;
 
   background-repeat: no-repeat;
 }
@@ -79,11 +85,18 @@ main {
   background: var(--white);
   box-shadow: inset 0px 4px 0px 0px hsl(235, 24%, 80%);
 
+  /* 3 choices */
   padding-block: clamp(1.5rem, 1.2535rem + 1.0516vw, 2.2rem);
   padding-inline: clamp(1.8rem, 1.5183rem + 1.2019vw, 2.6rem);
+  /* 5 choices */
+  padding-block: 0.9rem;
+  padding-inline: 1.05rem;
 
   & img {
+    /* 3 choices */
     height: clamp(3.3rem, 2.7014rem + 2.554vw, 5rem);
+    /* 5 choices */
+    height: 2.5rem;
   }
 
   &:hover {
@@ -92,36 +105,74 @@ main {
 }
 .paper,
 .rock,
-.scissors {
+.scissors,
+.spock,
+.lizard {
   width: max-content;
   background: var(--Paper-Gradient);
   box-shadow: inset 0px -4px 0px 0px hsl(229, 66%, 46%);
   box-shadow: inset 0px -5px 0px 0px hsl(from black h s l / 0.3);
   border-radius: 50%;
 
-  padding-block: clamp(1rem, 0.7183rem + 1.2019vw, 1.8rem);
+  /* 3 choices */
+  /* padding-block: clamp(1rem, 0.7183rem + 1.2019vw, 1.8rem); */
+  /* padding-inline: clamp(0.9rem, 0.6535rem + 1.0516vw, 1.6rem); */
+  /* 5 chocies */
+  padding-block: 0.8rem;
   padding-inline: clamp(0.9rem, 0.6535rem + 1.0516vw, 1.6rem);
 }
-
+.paper {
+  /* grid-row: 2;
+  grid-column: 2; */
+  grid-row: 1 / span 2;
+  grid-column: 2;
+  margin-inline-start: 2.2rem;
+  margin-block-start: 4.6rem;
+}
 .rock {
   background: var(--Rock-Gradient);
-  grid-row: 2;
-  grid-column: 1 / span 2;
+  justify-self: flex-start;
+  /* grid-row: 2; */
+  /* grid-column: 1 / span 2; */
+  grid-row: 3;
+  grid-column: 2;
   & .choice {
-    padding-block-start: clamp(1.8rem, 1.4479rem + 1.5023vw, 2.8rem);
+    /* 3 choices */
+    /* padding-block-start: clamp(1.8rem, 1.4479rem + 1.5023vw, 2.8rem); */
+    /* 5 choices */
+    padding-block-start: 1.4rem;
 
     & img {
-      height: clamp(2.7rem, 2.1718rem + 2.2535vw, 4.2rem);
+      /* 3 choices */
+      /* height: clamp(2.7rem, 2.1718rem + 2.2535vw, 4.2rem); */
+      /* 5 choices */
+      height: 2rem;
     }
   }
 }
 
 .scissors {
   background: var(--Scissors-Gradient);
+  /* grid-row: 1; */
+  /* grid-column: 2; */
   grid-row: 1;
-  grid-column: 2;
+  grid-column: 1 / span 2;
 }
 
+.spock {
+  background: var(--Spock-Cyan);
+  grid-row: 1 / span 2;
+  grid-column: 1;
+  margin-inline-end: 2.2rem;
+  margin-block-start: 4.6rem;
+}
+
+.lizard {
+  background: var(--Lizard-Gradient);
+  grid-row: 3;
+  grid-column: 1;
+  justify-self: flex-end;
+}
 .score-container {
   display: flex;
   justify-content: space-between;
