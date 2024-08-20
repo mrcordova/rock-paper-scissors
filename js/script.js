@@ -1,7 +1,9 @@
 const rulesDialog = document.getElementById("rules-dialog");
 const closeBtn = document.getElementById("close-btn");
 const rulesBtn = document.querySelector(".rules-btn");
-const choicesEle = document.querySelectorAll(".paper, .scissors, .rock");
+const choicesEle = document.querySelectorAll(
+  ".paper, .scissors, .rock, .spock, .lizard"
+);
 const gameContainer = document.querySelector(".game-container");
 const stepTwoTemplate = document.getElementById("waiting");
 const score = document.querySelector(".score>h1");

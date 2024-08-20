@@ -235,10 +235,13 @@ main {
   .you-picked {
     grid-row: 1;
     grid-column: 1;
+    margin: 0;
   }
   .computer-picked {
     grid-row: 1;
     grid-column: 2;
+    margin: 0;
+    justify-self: center;
   }
 }
 .result-container.result-container {
