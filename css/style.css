@@ -46,9 +46,13 @@ main {
   height: 100%;
   display: flex;
   flex-direction: column;
-
   align-items: center;
-  gap: 6.5rem;
+
+  /* Mobile */
+  /* gap: 6.5rem; */
+  /* padding-inline: 2rem 1.9rem; */
+  /* Desktop */
+  gap: 3.7rem;
   padding-inline: 2rem 1.9rem;
 }
 
@@ -66,22 +70,35 @@ main {
 .game-container {
   display: grid;
   justify-items: center;
-  gap: 1rem 3rem;
-  background: url(../images/bg-triangle.svg) center 3.5rem;
-  background-size: 13rem;
+  /* Mobile */
+  /* gap: 1rem 3rem; */
+  /* background: url(../images/bg-triangle.svg) center 3.5rem; */
+  /* background-size: 13rem; */
+  /* background-repeat: no-repeat; */
+  /* Desktop */
+  gap: 1.3rem 5rem;
+  background: url(../images/bg-triangle.svg) center 6rem;
+  background-size: 19rem;
   background-repeat: no-repeat;
 }
 
 .choice {
   width: max-content;
   border-radius: 50%;
-  padding-block: 1.5rem;
-  padding-inline: 1.8rem;
   background: var(--white);
   box-shadow: inset 0px 4px 0px 0px hsl(235, 24%, 80%);
+  /* Mobile */
+  /* padding-block: 1.5rem; */
+  /* padding-inline: 1.8rem; */
+  /* Desktop */
+  padding-block: 2.2rem;
+  padding-inline: 2.6rem;
 
   & img {
-    height: 3.3rem;
+    /* Mobile */
+    /* height: 3.3rem; */
+    /* Desktop */
+    height: 5rem;
   }
 
   &:hover {
@@ -93,11 +110,16 @@ main {
 .scissors {
   width: max-content;
   background: var(--Paper-Gradient);
-  padding-block: 1rem;
-  padding-inline: 0.9rem;
-  border-radius: 50%;
   box-shadow: inset 0px -4px 0px 0px hsl(229, 66%, 46%);
   box-shadow: inset 0px -5px 0px 0px hsl(from black h s l / 0.3);
+  border-radius: 50%;
+
+  /* Mobile */
+  /* padding-block: 1rem; */
+  /* padding-inline: 0.9rem; */
+  /* Desktop */
+  padding-block: 1.8rem;
+  padding-inline: 1.6rem;
 }
 
 .rock {
@@ -105,9 +127,15 @@ main {
   grid-row: 2;
   grid-column: 1 / span 2;
   & .choice {
-    padding-block-start: 1.8rem;
+    /* Mobile */
+    /* padding-block-start: 1.8rem; */
+    /* Desktop */
+    padding-block-start: 2.8rem;
     & img {
-      height: 2.7rem;
+      /* Mobile */
+      /* height: 2.7rem; */
+      /* Desktop */
+      height: 4.2rem;
     }
   }
 }
