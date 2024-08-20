@@ -35,8 +35,8 @@ function youPicked(e) {
 
   setTimeout(() => {
     // console.log();
-    rulesBtn.insertAdjacentHTML(
-      "beforebegin",
+    choice.insertAdjacentHTML(
+      "afterend",
       `<div class="result-container" style="display:none">
         <p>YOU LOSE</p>
         <button>PLAY AGAIN</button>
@@ -57,17 +57,18 @@ function youPicked(e) {
       //   console.log("Player wins");
       resultContainer.children[0].textContent = "YOU WIN";
       score.textContent = `${parseInt(score.textContent) + 1}`;
+      choice.classList.add("play-shadows");
     } else if (choices[computerChoice] === choice.dataset.choice) {
       //   console.log("computer wins");
       resultContainer.children[0].textContent = "YOU LOSE";
       score.textContent = `${parseInt(score.textContent) - 1}`;
+      computerChoiceEle.classList.add("play-shadows");
     } else {
       //   console.log("It's a draw");
       resultContainer.children[0].textContent = "YOU TIED";
     }
-    choice.classList.add("play-shadows");
     resultContainer.children[1].addEventListener("click", (e) => {
-      console.log("play agian");
+      // console.log("play agian");
       document.querySelector(".step-2").remove();
       gameContainer.style.display = "";
       resultContainer.remove();
