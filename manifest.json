@@ -1,0 +1,13 @@
+{
+  "name": "HandClash",
+  "start_url": "index.html",
+  "display": "fullscreen",
+  "background_color": "hsl(229, 64%, 46%)",
+  "icons": [
+    {
+      "src": "images/logo-bonus.svg",
+      "type": "image/svg",
+      "sizes": "any"
+    }
+  ]
+}
