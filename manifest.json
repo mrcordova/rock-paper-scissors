@@ -38,5 +38,28 @@
       "src": "images/maskable_icon_x512.png",
       "type": "image/png"
     }
+  ],
+  "screenshots": [
+    {
+      "src": "images/Screenshot_1.png",
+      "sizes": "372×767",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Step 1"
+    },
+    {
+      "src": "images/Screenshot_2.png",
+      "sizes": "358×754",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Step 2"
+    },
+    {
+      "src": "images/Screenshot_3.png",
+      "sizes": "372×765",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Step 3"
+    }
   ]
 }
