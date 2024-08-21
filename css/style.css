@@ -66,6 +66,10 @@ main {
 
   align-items: center;
 
+  gap: 2.5rem 2.5rem;
+  background: url(../images/bg-pentagon.svg) center
+    clamp(2rem, 0.9437rem + 4.507vw, 5rem);
+  background-size: clamp(15rem, 13.2394rem + 7.5117vw, 20rem);
   /* gap: clamp(1rem, 0.8944rem + 0.4507vw, 1.3rem)
     clamp(3rem, 2.2958rem + 3.0047vw, 5rem); */
 
@@ -77,9 +81,9 @@ main {
   /* background: url(../images/bg-pentagon.svg) center 2rem; */
   /* background-size: 15rem; */
   /* Desktop */
-  gap: 2.5rem 2.5rem;
-  background: url(../images/bg-pentagon.svg) center 5rem;
-  background-size: 20rem;
+  /* gap: 2.5rem 2.5rem; */
+  /* background: url(../images/bg-pentagon.svg) center 5rem; */
+  /* background-size: 20rem; */
 
   background-repeat: no-repeat;
 }
@@ -91,23 +95,26 @@ main {
   box-shadow: inset 0px 4px 0px 0px hsl(235, 24%, 80%);
 
   /* 3 choices */
-  padding-block: clamp(1.5rem, 1.2535rem + 1.0516vw, 2.2rem);
-  padding-inline: clamp(1.8rem, 1.5183rem + 1.2019vw, 2.6rem);
+  /* padding-block: clamp(1.5rem, 1.2535rem + 1.0516vw, 2.2rem); */
+  /* padding-inline: clamp(1.8rem, 1.5183rem + 1.2019vw, 2.6rem); */
+  padding-block: clamp(0.9rem, 0.5831rem + 1.3521vw, 1.8rem);
+  padding-inline: clamp(1.05rem, 0.7507rem + 1.277vw, 1.9rem);
   /* 5 choices */
   /* Mobile */
   /* padding-block: 0.9rem; */
   /* padding-inline: 1.05rem; */
   /* Desktop */
-  padding-block: 1.8rem;
-  padding-inline: 1.9rem;
+  /* padding-block: 1.8rem; */
+  /* padding-inline: 1.9rem; */
 
   & img {
+    height: clamp(2.5rem, 2.1479rem + 1.5023vw, 3.5rem);
     /* 3 choices */
-    height: clamp(3.3rem, 2.7014rem + 2.554vw, 5rem);
+    /* height: clamp(3.3rem, 2.7014rem + 2.554vw, 5rem); */
     /* 5 choices */
     /* Mobile */
     /* height: 2.5rem; */
-    height: 3.5rem;
+    /* height: 3.5rem; */
   }
 
   &:hover {
@@ -128,25 +135,29 @@ main {
   /* 3 choices */
   /* padding-block: clamp(1rem, 0.7183rem + 1.2019vw, 1.8rem); */
   /* padding-inline: clamp(0.9rem, 0.6535rem + 1.0516vw, 1.6rem); */
+  padding-block: clamp(0.8rem, 0.7648rem + 0.1502vw, 0.9rem);
+  padding-inline: clamp(0.9rem, 0.8648rem + 0.1502vw, 1rem);
   /* 5 chocies */
   /* Mobile */
   /* padding-block: 0.8rem; */
   /* padding-inline: clamp(0.9rem, 0.6535rem + 1.0516vw, 1.6rem); */
   /* Desktop */
-  padding-block: 0.9rem;
-  padding-inline: 1rem;
+  /* padding-block: 0.9rem; */
+  /* padding-inline: 1rem; */
 }
 .paper {
   /* grid-row: 2;
   grid-column: 2; */
   grid-row: 1 / span 2;
   grid-column: 2;
+  margin-inline-start: clamp(2.2rem, 1.3549rem + 3.6056vw, 4.6rem);
+  margin-block-start: clamp(4.6rem, 3.4028rem + 5.108vw, 8rem);
   /* Mobile */
   /* margin-inline-start: 2.2rem; */
   /* margin-block-start: 4.6rem; */
   /* Desktop */
-  margin-inline-start: 4.6rem;
-  margin-block-start: 8rem;
+  /* margin-inline-start: 4.6rem; */
+  /* margin-block-start: 8rem; */
 }
 .rock {
   background: var(--Rock-Gradient);
@@ -165,10 +176,11 @@ main {
       /* 3 choices */
       /* height: clamp(2.7rem, 2.1718rem + 2.2535vw, 4.2rem); */
       /* 5 choices */
+      height: clamp(2rem, 1.6479rem + 1.5023vw, 3rem);
       /* Mobile */
       /* height: 2rem; */
       /* Desktop */
-      height: 3rem;
+      /* height: 3rem; */
     }
   }
 }
@@ -185,12 +197,14 @@ main {
   background: var(--Spock-Cyan);
   grid-row: 1 / span 2;
   grid-column: 1;
+  margin-inline-end: clamp(2.2rem, 1.3549rem + 3.6056vw, 4.6rem);
+  margin-block-start: clamp(4.6rem, 3.4028rem + 5.108vw, 8rem);
   /* Mobile */
   /* margin-inline-end: 2.2rem; */
   /* margin-block-start: 4.6rem; */
   /* Desktop */
-  margin-inline-end: 4.6rem;
-  margin-block-start: 8rem;
+  /* margin-inline-end: 4.6rem; */
+  /* margin-block-start: 8rem; */
 }
 
 .lizard {
@@ -216,7 +230,13 @@ main {
   min-inline-size: clamp(19.7rem, 11.1437rem + 36.507vw, 44rem);
 
   & img {
-    block-size: clamp(3.3rem, 2.2437rem + 4.507vw, 6.3rem);
+    block-size: clamp(3.3rem, 1.9533rem + 5.7457vw, 7.1245rem);
+    /* MObile */
+    /* block-size: 3.3rem; */
+    /* block-size: clamp(3.3rem, 2.2437rem + 4.507vw, 6.3rem); */
+    /* padding-block-start: clamp(0rem, 0.1352rem + -0.1502vw, 0.1rem); */
+    /* Desktop */
+    /* block-size: 7.1245rem; */
     padding-block-start: clamp(0rem, 0.1352rem + -0.1502vw, 0.1rem);
   }
 }
