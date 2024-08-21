@@ -11,7 +11,8 @@
     {
       "src": "images/logo-bonus.svg",
       "type": "image/svg",
-      "sizes": "any"
+      "sizes": "any",
+      "purpose": "maskable"
     },
     {
       "purpose": "maskable",
