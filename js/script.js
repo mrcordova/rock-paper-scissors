@@ -90,6 +90,11 @@ closeBtn.addEventListener("click", () => {
   rulesDialog.close();
 });
 
+window.addEventListener("beforeinstallprompt", (e) => {
+  e.preventDefault();
+  console.log("it can installed");
+});
+
 window.addEventListener("load", () => {
   if (localStorage.getItem("score") == null) {
     localStorage.setItem("score", score.textConten ?? "12");

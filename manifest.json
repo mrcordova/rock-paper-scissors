@@ -1,13 +1,16 @@
 {
   "name": "HandClash",
+  "short_name": "HandClash",
   "start_url": "index.html",
-  "display": "fullscreen",
-  "background_color": "hsl(229, 64%, 46%)",
+  "display": "standalone",
+  "background_color": "#2a46c0",
+  "description": "enhanced game of rock, paper and scissors game",
+  "orientation": "natural",
   "icons": [
     {
       "src": "images/logo-bonus.svg",
       "type": "image/svg",
-      "sizes": "any"
+      "sizes": "512x512"
     }
   ]
 }
