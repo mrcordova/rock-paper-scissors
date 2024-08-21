@@ -48,7 +48,8 @@ function youPicked(e) {
     );
     const resultContainer = document.querySelector(".result-container");
     resultContainer.style.display = "";
-    const computerChoice = choicesKey[getRandomInt(6)];
+    const computerChoice = choicesKey[getRandomInt(5)];
+
     const computerChoiceEle = gameContainer
       .querySelector(`[data-choice="${computerChoice}"`)
       .cloneNode(true);
