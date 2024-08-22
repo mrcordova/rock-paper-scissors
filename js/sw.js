@@ -18,19 +18,6 @@ const APP_STATIC_RESOURCES = [
   "images/maskable_icon_x512.png",
 ];
 
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("sw.js").then(
-    (registration) => {
-      console.log("Service worker registration successful:", registration);
-    },
-    (error) => {
-      console.error(`Service worker registration failed: ${error}`);
-    }
-  );
-} else {
-  console.error("Service workers are not supported.");
-}
-
 self.addEventListener("install", (e) => {
   e.waitUntil(
     (async () => {
