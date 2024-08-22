@@ -42,3 +42,26 @@ self.addEventListener("activate", (event) => {
     })()
   );
 });
+
+self.addEventListener("fetch", (event) => {
+  // when seeking an HTML page
+  if (event.request.mode === "navigate") {
+    // Return to the index.html page
+    event.respondWith(caches.match("/"));
+    return;
+  }
+
+  // For every other request type
+  event.respondWith(
+    (async () => {
+      const cache = await caches.open(CACHE_NAME);
+      const cachedResponse = await cache.match(event.request.url);
+      if (cachedResponse) {
+        // Return the cached response if it's available.
+        return cachedResponse;
+      }
+      // Respond with a HTTP 404 response status.
+      return new Response(null, { status: 404 });
+    })()
+  );
+});
