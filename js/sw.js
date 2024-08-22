@@ -26,3 +26,19 @@ self.addEventListener("install", (e) => {
     })()
   );
 });
+
+self.addEventListener("activate", (event) => {
+  event.waitUntil(
+    (async () => {
+      const names = await caches.keys();
+      await Promise.all(
+        names.map((name) => {
+          if (name !== CACHE_NAME) {
+            return caches.delete(name);
+          }
+        })
+      );
+      await clients.claim();
+    })()
+  );
+});
