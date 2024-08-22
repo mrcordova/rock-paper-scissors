@@ -1,4 +1,5 @@
 const VERSION = "v1";
+const CACHE_NAME = `hand-clash-${VERSION}`;
 const APP_STATIC_RESOURCES = [
   "index.html",
   "js/script.js",
@@ -16,3 +17,12 @@ const APP_STATIC_RESOURCES = [
   "images/logo-bonus.svg",
   "images/maskable_icon_x512.png",
 ];
+
+self.addEventListener("install", (e) => {
+  e.waitUntil(
+    (async () => {
+      const cache = await caches.open(CACHE_NAME);
+      cache.addAll(APP_STATIC_RESOURCES);
+    })()
+  );
+});
