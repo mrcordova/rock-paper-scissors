@@ -38,7 +38,6 @@ function youPicked(e) {
   gameContainer.style.display = "none";
 
   setTimeout(() => {
-    // console.log();
     choice.insertAdjacentHTML(
       "afterend",
       `<div class="result-container" style="display:none">
